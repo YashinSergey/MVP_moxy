@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MVP_moxy</string>
+    <string name="network_error">Network error</string>
 </resources>

@@ -4,6 +4,7 @@ package com.iashinsergei.mvpmoxy.ui;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,6 +23,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity implements MainView {
 
     private ImageView image;
+    private TextView textView;
     RequestModel body;
 
     @Override
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     private void initViews() {
         image = findViewById(R.id.image);
+        textView = findViewById(R.id.text_view);
     }
 
 
@@ -61,8 +64,10 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void renderData(RequestModel model) {
-        Log.d("TEST",  model.getDatumList().toString());
-//        Uri uri = Uri.parse(model.getDatumList().get(0).setData().getUrl());
+//        Log.d("TEST",  model.getMainDataList().toString());
+//        Uri uri = Uri.parse(model.getMainDataList().get(0).getData().getUrl());
 //        image.setImageURI(uri);
+
+        textView.setText(model.getViewList().get(0));
     }
 }

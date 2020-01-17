@@ -7,25 +7,25 @@ public class Variant {
 
     @SerializedName("id")
     @Expose
-    private Integer id;
+    private int id;
+
     @SerializedName("text")
     @Expose
-    private String text;
+    private String varText;
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getText() {
-        return text;
+    public String getVarText() {
+        return varText;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setVarText(String varText) {
+        this.varText = varText;
     }
-
 }

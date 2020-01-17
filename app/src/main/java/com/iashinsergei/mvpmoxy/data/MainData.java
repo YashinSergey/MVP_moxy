@@ -3,7 +3,7 @@ package com.iashinsergei.mvpmoxy.data;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Datum {
+public class MainData {
 
     @SerializedName("name")
     @Expose
@@ -16,16 +16,7 @@ public class Datum {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Data getData() {
         return data;
     }
-
-    public void setData(Data data) {
-        this.data = data;
-    }
-
 }

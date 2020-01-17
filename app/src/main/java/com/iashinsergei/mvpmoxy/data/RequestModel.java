@@ -7,27 +7,17 @@ import java.util.List;
 
 public class RequestModel {
 
-    @SerializedName("datumList")
-    @Expose
-    private List<Datum> datumList;
+    @SerializedName("data")
+    @Expose private List<MainData> mainDataList;
+
     @SerializedName("view")
-    @Expose
-    private List<String> view;
+    @Expose private List<String> viewList;
 
-    public List<Datum> getDatumList() {
-        return datumList;
+    public List<MainData> getMainDataList() {
+        return mainDataList;
     }
 
-    public void setDatumList(List<Datum> datumList) {
-        this.datumList = datumList;
+    public List<String> getViewList() {
+        return viewList;
     }
-
-    public List<String> getView() {
-        return view;
-    }
-
-    public void setView(List<String> view) {
-        this.view = view;
-    }
-
 }

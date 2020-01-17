@@ -1,16 +1,68 @@
 package com.iashinsergei.mvpmoxy.ui;
 
-import android.os.Bundle;
 
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.iashinsergei.mvpmoxy.R;
+import com.iashinsergei.mvpmoxy.data.RequestModel;
+import com.iashinsergei.mvpmoxy.data.RetrofitData;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.Objects;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class MainActivity extends AppCompatActivity implements MainView {
+
+    private ImageView image;
+    RequestModel body;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        initViews();
+
+        updateData();
+    }
+
+    private void initViews() {
+        image = findViewById(R.id.image);
+    }
+
+
+    private void updateData() {
+        RetrofitData.getWeatherData().getAPI().loadData()
+                .enqueue(new Callback<RequestModel>() {
+                    @Override
+                    public void onResponse(@NonNull Call<RequestModel> call,@NonNull Response<RequestModel> response) {
+                        if (response.body() != null && response.isSuccessful()) {
+                            body = response.body();
+                            renderData(response.body());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(@NonNull Call<RequestModel> call, @NonNull Throwable t) {
+                        Toast.makeText(getApplicationContext(), getString(R.string.network_error),
+                                Toast.LENGTH_SHORT).show();
+                        Log.e("RESPONSE", Objects.requireNonNull(t.getMessage()));
+                    }
+                });
+    }
+
+    @Override
+    public void renderData(RequestModel model) {
+        Log.d("TEST",  model.getDatumList().toString());
+//        Uri uri = Uri.parse(model.getDatumList().get(0).setData().getUrl());
+//        image.setImageURI(uri);
     }
 }

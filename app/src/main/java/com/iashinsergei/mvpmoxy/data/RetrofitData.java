@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitData {
 
-    private static RetrofitData retrofitData = null;
+    private static RetrofitData retrofitData;
     private RequestAPI API;
 
     private RetrofitData() {

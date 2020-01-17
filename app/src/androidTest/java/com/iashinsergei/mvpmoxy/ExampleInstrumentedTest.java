@@ -1,4 +1,4 @@
-package com.iashinsergei.mvp_moxy;
+package com.iashinsergei.mvpmoxy;
 
 import android.content.Context;
 

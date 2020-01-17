@@ -1,8 +1,10 @@
-package com.iashinsergei.mvp_moxy;
+package com.iashinsergei.mvpmoxy.ui;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.iashinsergei.mvpmoxy.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -12,7 +12,7 @@ public class RetrofitData {
         API = createAdapter();
     }
 
-    public static RetrofitData getWeatherData() {
+    public static RetrofitData getRetrofitData() {
         if (retrofitData == null) {
             retrofitData = new RetrofitData();
         }

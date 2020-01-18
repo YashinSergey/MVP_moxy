@@ -33,7 +33,7 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-        holder.bind(position);
+        holder.bind(nameList.get(position));
 
         holder.textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,8 +57,8 @@ public class RvAdapter extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
             textView = itemView.findViewById(R.id.tv_name);
         }
 
-        void bind(int pos) {
-            textView.setText(nameList.get(pos));
+        void bind(String str) {
+            textView.setText(str);
         }
     }
 }

@@ -7,13 +7,13 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.arellomobile.mvp.MvpAppCompatActivity;
+import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.iashinsergei.mvpmoxy.R;
 import com.iashinsergei.mvpmoxy.data.model.RequestModel;
 import com.iashinsergei.mvpmoxy.presenter.Presenter;
 import com.iashinsergei.mvpmoxy.ui.adapter.RvAdapter;
 
-import moxy.MvpAppCompatActivity;
-import moxy.presenter.InjectPresenter;
 
 
 public class MainActivity extends MvpAppCompatActivity implements MainView {

@@ -2,36 +2,29 @@ package com.iashinsergei.mvpmoxy.ui;
 
 
 import android.os.Bundle;
+import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.facebook.drawee.backends.pipeline.Fresco;
 import com.iashinsergei.mvpmoxy.R;
 import com.iashinsergei.mvpmoxy.data.model.RequestModel;
 import com.iashinsergei.mvpmoxy.presenter.Presenter;
 import com.iashinsergei.mvpmoxy.ui.adapter.RvAdapter;
 
-import moxy.presenter.ProvidePresenter;
+import moxy.MvpAppCompatActivity;
+import moxy.presenter.InjectPresenter;
 
 
-public class MainActivity extends AppCompatActivity implements MainView {
+public class MainActivity extends MvpAppCompatActivity implements MainView {
 
-
-    @ProvidePresenter
-    Presenter providePresenter() {
-     return new Presenter(this);
-
-    }
+    @InjectPresenter
+    Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fresco.initialize(this);
         setContentView(R.layout.activity_main);
-
-
     }
 
 
@@ -41,5 +34,10 @@ public class MainActivity extends AppCompatActivity implements MainView {
         RvAdapter adapter = new RvAdapter(model.getViewList(), this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    @Override
+    public void showNetworkErrorMassage() {
+        Toast.makeText(this, String.valueOf(R.string.network_error_massage), Toast.LENGTH_SHORT).show();
     }
 }

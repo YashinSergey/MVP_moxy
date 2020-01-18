@@ -1,7 +1,7 @@
 package com.iashinsergei.mvpmoxy.ui;
 
-import com.iashinsergei.mvpmoxy.data.RequestModel;
+import com.iashinsergei.mvpmoxy.data.model.RequestModel;
 
 public interface MainView {
-    void renderData(RequestModel model);
+    void initRecyclerView(RequestModel model);
 }

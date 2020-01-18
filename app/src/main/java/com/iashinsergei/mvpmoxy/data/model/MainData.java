@@ -1,4 +1,4 @@
-package com.iashinsergei.mvpmoxy.data;
+package com.iashinsergei.mvpmoxy.data.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

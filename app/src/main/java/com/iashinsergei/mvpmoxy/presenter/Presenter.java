@@ -6,14 +6,14 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.iashinsergei.mvpmoxy.data.model.RequestModel;
+import com.arellomobile.mvp.InjectViewState;
+import com.arellomobile.mvp.MvpPresenter;
 import com.iashinsergei.mvpmoxy.data.RetrofitData;
+import com.iashinsergei.mvpmoxy.data.model.RequestModel;
 import com.iashinsergei.mvpmoxy.ui.MainView;
 
 import java.util.Objects;
 
-import moxy.InjectViewState;
-import moxy.MvpPresenter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
